@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-row>
+      <ion-col size-sm="12" style="margin: 0; padding:0%">
+        <div class="banner"></div>
+      </ion-col>
+    </ion-row>
+   
+        <ion-row style="margin-top: 5%;">
+            <ion-col size-sm="4" >
+                <div class="button-container">
+                  <button (click)="program()" class="button-wrapper">
+                    <img src="assets/img/ic_progrss.png">
+                    
+                  </button>
+                  <h5 >Program</h5>
+                </div>
+            </ion-col>
+            <ion-col size-sm="4">
+                <div class=" button-container">
+                    <button (click)="bmi()" class="button-wrapper">
+                      <img src="assets/img/ic_bmi.png">
+                      
+                    </button>
+                    <h5>BMI</h5>
+                </div>
+            </ion-col>
+            <ion-col size-sm="4">
+                <div class=" button-container">
+                    <button (click)="bmr()" class="button-wrapper">
+                      <img src="assets/img/ic_bmr.png">
+                    </button>
+                    <h5 >BMR</h5>
+                </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-sm="4">
+                <div class=" button-container">
+                    <button (click)="healthBlogs()" class="button-wrapper">
+                      <img src="assets/img/ic_blog.png">
+                    </button>
+                    <h5>Health Blogs</h5>
+                </div>
+            </ion-col>
+            <ion-col size-sm="4">
+                <div class=" button-container">
+                    <button (click)="healthTips()" class="button-wrapper">
+                      <img src="assets/img/ic_tips.png">
+                    </button>
+                    <h5>Health Tips</h5>
+                </div>
+            </ion-col>
+            <ion-col size-sm="4">
+                <div class=" button-container">
+                    <button (click)="contact()" class="button-wrapper">
+                      <img src="assets/img/ic_contact_us.png">
+                    </button>
+                    <h5>Contact Us</h5>
+                </div>
+            </ion-col>
+          </ion-row>
+
+
+</ion-content>

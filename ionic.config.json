@@ -1,0 +1,7 @@
+{
+  "name": "fitness-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

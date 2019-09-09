@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-grid>
+    <ion-icon style="font-size: 30px; float: right; font-weight:  700" name="close" (click)="closeModal()"></ion-icon>
+    <ion-row>
+      <ion-col size-sm="12">
+        <div style="margin: 15% auto;">
+           
+                  <h1 text-center>BMI Calculation</h1>
+                
+                  <h2 text-center>Your Weight : {{weight}} kg </h2>
+                  <h2 text-center>Your Height: {{height}} cm </h2>
+                  
+                  <h2 text-center>Your BMI Score: {{bmiValue}}</h2>
+                  
+        </div>  
+      </ion-col>
+    </ion-row>
+
+  <ion-row>
+      <ion-col size-sm="6">
+         <h1 text-center [ngStyle]="{'color': getColor(bmiValue)}" *ngIf="bmiValue" >You are {{bmiMessage}}</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+   
+</ion-content>

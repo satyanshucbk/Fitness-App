@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start" >
+          <ion-back-button (click)="back()"></ion-back-button>
+        </ion-buttons>
+    <ion-title text-center>Workout Playlists</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="video_page ">
+    <ion-list class="channel_list" *ngFor="let videos of videos">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-5>
+                <img [src]="videos.snippet.thumbnails.medium.url">
+            </ion-col>
+            <ion-col col-7>
+                    <h2>{{videos.snippet.title}}}</h2>
+                    <span class="descrptn">{{videos.snippet.description}}}</span>      
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+      
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+          <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+</ion-content>

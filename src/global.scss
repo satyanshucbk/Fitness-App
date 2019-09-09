@@ -1,0 +1,207 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+// p , input, textarea , span {
+//     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//     font-size: 18px;
+//     display: block;
+//     font-weight: 400;
+// }
+
+input:focus,
+ion-input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
+.error-messages{
+    color: orangered;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+ion-modal{
+    padding: 20px!important;
+}
+
+.modal-wrapper{
+    height: 400px!important;
+    border-radius: 2%!important;
+}
+
+
+
+.desc{
+    text-align: justify;
+    font-size: 15px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-size: 17px;
+
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+.error-messages{
+    color: orangered;
+}
+.sub-header{
+    font-size: 1.2em;
+    font-weight: 1000;
+}
+ion-toolbar{
+   --background: none;
+   --background: #feb100!important;
+   color: white!important;
+}
+.para-text{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.9em;
+    color: dimgray;
+}
+.border{
+    border-bottom: 4px solid #feb100; 
+    
+    width: 15%;
+    padding: 10px;
+    margin-left: 5%;
+    
+}
+ion-card{
+    box-shadow: 0 4px 15px 0 rgba(0,0,0,0.2)!important;
+    transition: 0.3s;
+}
+ion-card-content{
+    font-size: 1.2em;
+}
+
+ion-card-subtitle{ font-size: 16px}
+
+.browser-button {
+    border: 2px solid #feb100;
+    width: 55%;
+    height: 4em;
+    border-radius: 7px;
+    
+    padding: 0%;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background: #feb100;
+    color: white;
+    font-size: 1em;
+    display: block;
+    margin: 5% auto;
+}
+.browser-button:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/******HOME Page******/
+.banner{
+    background-image: url(assets/img/banner@3x.png);
+    height: 240px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.button-wrapper{
+    width: 60px;
+    height: 60px;
+    border: 2px solid #feb100;
+    border-radius: 24%;
+    background: none;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    font-size: 1em;
+    display: block;
+    margin: 0 auto;
+}
+.button-wrapper:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.button-container{
+    margin: 25px 0px;
+    text-align: center;
+}
+
+
+
+
+/******Contact Page******/
+
+.input-wrapper{
+    border: 1px solid #feb100;
+    border-radius: 12px;
+    width: 80%;
+    height: 50px;
+    margin: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.input-text{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border: none;
+    background: none;
+}
+.input-wrapper-textarea{
+    border: 1px solid #feb100;
+    border-radius: 12px;
+    width: 80%;
+    height: 100px;
+    margin: 5%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.form-container{
+    padding: 5px;
+    margin-top: 5%;
+    background: transparent;
+}
+
+.chart{
+    text-align: -webkit-center;
+}
+
+.program-card{
+    min-height: 500px;
+    max-height: 650px;
+}
+

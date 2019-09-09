@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar >
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>BMR-cal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+          <ion-col size-sm="12">
+            <form [formGroup]="bmrForm">
+                <ion-list>
+                    <ion-item class="form-group">
+                        <ion-label>Weight </ion-label>
+                        <ion-input formControlName="weight" text-center placeholder="00" class=" input-text" type="number" [(ngModel)]="weight"></ion-input> KG
+                      </ion-item>
+                      <div class="error-messages"> 
+                        <ng-container   *ngFor="let error of error_message.weight">
+                          <span class="error-message" *ngIf="bmrForm.get('weight').hasError(error.type) && (bmrForm.get('weight').dirty || bmrForm.get('weight').touched)">
+                             {{ error.message }}
+                          </span>
+                        </ng-container>
+                      </div>
+                      <ion-item class="form-group">
+                        <ion-label >Height</ion-label>
+                        <ion-input formControlName="height" text-center placeholder="00" type="number" [(ngModel)]="height"></ion-input> CM
+                      </ion-item>
+                      <div class="error-messages"> 
+                        <ng-container   *ngFor="let error of error_message.height">
+                          <span class="error-message" *ngIf="bmrForm.get('height').hasError(error.type) && (bmrForm.get('height').dirty || bmrForm.get('height').touched)">
+                             {{ error.message }}
+                          </span>
+                        </ng-container>
+                      </div>
+                      <ion-item class="form-group">
+                          <ion-label >Your Age</ion-label>
+                          <ion-input formControlName="age" text-center min="0" placeholder="00" type="number" [(ngModel)]="age"></ion-input> Years
+                      </ion-item>
+                      <div class="error-messages"> 
+                        <ng-container   *ngFor="let error of error_message.age">
+                          <span class="error-message" *ngIf="bmrForm.get('age').hasError(error.type) && (bmrForm.get('age').dirty || bmrForm.get('age').touched)">
+                             {{ error.message }}
+                          </span>
+                        </ng-container>
+                      </div>
+                      <ion-item class="form-group">
+                          <ion-label >Gender</ion-label>
+                          <ion-select formControlName="gender" [(ngModel)]="gender">
+                            <ion-select-option  value="male">Male</ion-select-option>
+                            <ion-select-option value="female">Female</ion-select-option>
+                          </ion-select>
+                      </ion-item>
+                      <div class="error-messages"> 
+                        <ng-container   *ngFor="let error of error_message.gender">
+                          <span class="error-message" *ngIf="bmrForm.get('gender').hasError(error.type) && (bmrForm.get('gender').dirty || bmrForm.get('gender').touched)">
+                             {{ error.message }}
+                          </span>
+                        </ng-container>
+                      </div>
+                  </ion-list>
+
+                  <div padding>
+                      <button *ngIf="bmrForm.valid" block ion-button class="form-group browser-button" (click)="calculateBMR()">CALCULATE</button>
+                  </div>
+            </form>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid text-center>
+        <ion-row>
+            <ion-col size-sm="12">
+              <div class="chart">
+                  <table>
+                      <tr class="ion-text-center">
+                        <th>Activity Level</th>
+                        <th>Calories</th>
+                      </tr>
+                      <tr>
+                        <td>Sedentary</td>
+                        <td>1,855 calories per day</td>
+                      </tr>
+                      <tr>
+                        <td>Lightly active</td>
+                        <td>2,126 calories per day</td>
+                      </tr>
+                      <tr>
+                        <td>Moderately active</td>
+                        <td>2,396 calories per day</td>
+                      </tr>
+                      <tr>
+                        <td>Highly active</td>
+                        <td>2,667 calories per day</td>
+                      </tr>
+                      <tr>
+                        <td>Super athletic</td>
+                        <td>2,937 calories per day</td>
+                      </tr>
+                    </table>
+              </div>
+                
+            </ion-col>
+          </ion-row>
+    </ion-grid>
+    
+</ion-content>
