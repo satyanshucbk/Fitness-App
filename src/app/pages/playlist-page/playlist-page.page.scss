@@ -1,15 +1,12 @@
 .scroll-content{padding: 16px 0 !important;}
     .channel_list{
-        border-bottom: 1px solid #d8d8d8;
-        margin-bottom: 2px;
+
         .col{
             h2{font-size: 14px;}
             p{font-size: 14px;}
         }
-    }
-
-    .descrptn{
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: "ellipse"; 
+        .img{
+            min-width: 90%;
+            max-width: 100%;
+        }
     }

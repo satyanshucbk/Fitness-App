@@ -205,3 +205,41 @@ ion-card-subtitle{ font-size: 16px}
     max-height: 650px;
 }
 
+
+/******Programs Page******/
+.scroll-content{padding: 16px 0 !important;}
+.descrptn{
+    white-space: nowrap!important; 
+    overflow: hidden!important;
+    text-overflow: ellipsis!important; 
+    }
+   .img-thumbnail{
+       border: 1px solid #dddddd;
+       border-radius: 9px;
+       margin: auto 0;
+       width: 100%;
+   }
+   .play-btn{
+    border: 2px solid #feb100;
+    border-radius: 24%;
+    
+    height: 55px;
+    width: 70px;
+       position: absolute;
+       top: 40%;
+       left: 177px;
+   }
+  .play-btn:after{
+    opacity: .3;
+  }
+   .img-btn{
+    height: 53px;
+    width: 55px;
+    margin: auto 7px;    
+}
+.video-title{
+    font-size: 20px;
+    display: block;
+    font-weight: 700;
+    margin-top: 0%;
+}

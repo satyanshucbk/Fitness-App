@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavParams } from '@ionic/angular';
 import { YtService } from '../../services/yt.service';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Location } from '@angular/common';
 
@@ -14,23 +15,39 @@ export class PlaylistPagePage implements OnInit {
   videos:any;
   data:any;
   nextPagetoke:String;
-  text:string;
+  text:string='';
   playlist_id:string;
 
-  constructor(public ytService: YtService, private location: Location, private authService: AuthService, public navParams: NavParams) {
-    this.text=navParams.get('text');
-    this.showvideos(this.text);
-    console.log(this.text)
+  constructor(public ytService: YtService, private location: Location, private authService: AuthService, private activatedRoute: ActivatedRoute) {
+  
+    // this.text= this.activatedRoute.queryParams();
+    // this.showvideos();
+    // console.log(this.text);
    }
+
+  
+
 
    public back(): void {
     this.location.back();
   }
 
   ngOnInit() {
- 
+    this.activatedRoute
+    .queryParams
+    .subscribe(params => {
+      // Defaults to 0 if no query param provided.
+      this.text = params['page']
+      // console.log(params['page']);
+      this.showvideos(params['page'])    
+    });
+
   }
+
+    
+   
   showvideos(text) {
+    console.log(text);
     this.ytService.getVideos(text)
     .then(data => {
       this.data = data;
@@ -39,15 +56,16 @@ export class PlaylistPagePage implements OnInit {
       console.log(this.data);
     });
   }
-
-  doInfinite(infiniteScroll){
-    this.ytService.lodemoreplaylist(this.playlist_id,this.nextPagetoke)
+ 
+  doInfinite(infiniteScroll) {
+    this.ytService.getscrollvideos(this.text,this.nextPagetoke)
     .then(data => {
       this.data = data;
       for(let i=0; i<this.data.items.length; i++) {
         this.videos.push(this.data.items[i]);
       }
       this.nextPagetoke=this.data.nextPageToken;
+      
       infiniteScroll.complete();
 
       if (this.videos.length === this.data.pageInfo.totalResults) {
@@ -55,7 +73,7 @@ export class PlaylistPagePage implements OnInit {
       }
 
     });
-    
-  }
+}
+
 
 }

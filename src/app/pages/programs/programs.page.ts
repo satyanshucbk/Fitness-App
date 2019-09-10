@@ -9,11 +9,12 @@ import { YtService } from '../../services/yt.service';
 })
 export class ProgramsPage implements OnInit {
   text: string;
+  txt: any;
 
   constructor( public router: Router, public yt: YtService) { }
 
   getVideos(text) {
-    this.router.navigate(['playlist-page'], text);
+    this.router.navigate(['playlist-page'], { queryParams: { page: text } } );
     console.log(text);
   }
   ngOnInit() {
