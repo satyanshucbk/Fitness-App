@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavParams } from '@ionic/angular';
 import { YtService } from '../../services/yt.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Location } from '@angular/common';
 
@@ -16,13 +15,12 @@ export class PlaylistPagePage implements OnInit {
   data:any;
   nextPagetoke:String;
   text:string='';
-  playlist_id:string;
 
-  constructor(public ytService: YtService, private location: Location, private authService: AuthService, private activatedRoute: ActivatedRoute) {
-  
-    // this.text= this.activatedRoute.queryParams();
-    // this.showvideos();
-    // console.log(this.text);
+
+  constructor(public ytService: YtService, private location: Location, 
+              private authService: AuthService, private activatedRoute: ActivatedRoute,
+              public router: Router) {
+
    }
 
   
@@ -44,14 +42,17 @@ export class PlaylistPagePage implements OnInit {
 
   }
 
-    
+  playVideos(videoId){
+    this.router.navigate(['result-page'], { queryParams: { page: videoId} } );
+    console.log(videoId);
+  }
    
   showvideos(text) {
     console.log(text);
     this.ytService.getVideos(text)
     .then(data => {
       this.data = data;
-      this.videos=this.data.items
+      this.videos=this.data.items;
       this.nextPagetoke=this.data.nextPageToken;
       console.log(this.data);
     });
@@ -66,7 +67,7 @@ export class PlaylistPagePage implements OnInit {
       }
       this.nextPagetoke=this.data.nextPageToken;
       
-      infiniteScroll.complete();
+      infiniteScroll.target.complete();
 
       if (this.videos.length === this.data.pageInfo.totalResults) {
         infiniteScroll.enable(false);

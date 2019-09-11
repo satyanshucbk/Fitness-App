@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class YtService {
 
   apiUrl = 'https://www.googleapis.com/youtube/v3/search';
-  // apiKey = 'AIzaSyBb2EaS3vejQ6R8hrZskQ72m5XJN0wv5r8';
+  
 
   constructor(public http: HttpClient, public youtubeVideoPlayer: YoutubeVideoPlayer) { 
    
@@ -26,6 +26,7 @@ export class YtService {
   }
 
   getscrollvideos(text,token) {
+    
     return new Promise(resolve => {
       this.http.get(this.apiUrl+'?part=snippet&key=AIzaSyBb2EaS3vejQ6R8hrZskQ72m5XJN0wv5r8&maxResults=10&q='+text+'&pageToken='+token).subscribe(data => {
         resolve(data);
@@ -35,14 +36,5 @@ export class YtService {
     });
   }
 
-  lodemoreplaylist(playlistId,nexpage_token) {
-    return new Promise(resolve => {
-      this.http.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&key=AIzaSyBb2EaS3vejQ6R8hrZskQ72m5XJN0wv5r8&maxResults=10&q=&playlistId='+playlistId+'&pageToken='+nexpage_token).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
 
 }

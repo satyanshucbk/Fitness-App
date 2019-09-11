@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-
+import { YoutubePipe } from '../../youtube.pipe';
 import { ResultPagePage } from './result-page.page';
 
 const routes: Routes = [
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ResultPagePage]
+  declarations: [ResultPagePage, YoutubePipe]
 })
 export class ResultPagePageModule {}
