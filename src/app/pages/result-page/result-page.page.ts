@@ -41,14 +41,14 @@ export class ResultPagePage implements OnInit {
   }
 
 
-  showvideos(text) {
-    console.log(text);
-    this.ytService.getVideos(text)
-    .then(data => {
-      this.data = data;
-      this.videos=this.data.items
-      console.log(this.data);
-    });
-  }
+  // showvideos(text) {
+  //   console.log(text);
+  //   this.ytService.getVideos(text)
+  //   .then(data => {
+  //     this.data = data;
+  //     this.videos=this.data.items
+  //     console.log(this.data);
+  //   });
+  // }
  
 }
