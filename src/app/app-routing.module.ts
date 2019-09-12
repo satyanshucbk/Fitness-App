@@ -23,6 +23,11 @@ const routes: Routes = [
   { path: 'contact-us', loadChildren: './pages/contact-us/contact-us.module#ContactUsPageModule' },
   { path: 'result-page', loadChildren: './pages/result-page/result-page.module#ResultPagePageModule' },
   { path: 'playlist-page', loadChildren: './pages/playlist-page/playlist-page.module#PlaylistPagePageModule' },
+  { path: 'core-blog', loadChildren: './pages/core-blog/core-blog.module#CoreBlogPageModule' },
+  { path: 'strength-blog', loadChildren: './pages/strength-blog/strength-blog.module#StrengthBlogPageModule' },
+  { path: 'muscle-blog', loadChildren: './pages/muscle-blog/muscle-blog.module#MuscleBlogPageModule' },
+  { path: 'fatburn-blog', loadChildren: './pages/fatburn-blog/fatburn-blog.module#FatburnBlogPageModule' },
+  { path: 'yoga-blog', loadChildren: './pages/yoga-blog/yoga-blog.module#YogaBlogPageModule' },
   // { path: 'modal', loadChildren: './bmr-modal/modal/modal.module#ModalPageModule' },
   // { path: 'modals', loadChildren: './bmi-modal/modals/modals.module#ModalsPageModule' },
   
