@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'health-blogs', loadChildren: './pages/health-blogs/health-blogs.module#HealthBlogsPageModule' },
   { path: 'health-tips', loadChildren: './pages/health-tips/health-tips.module#HealthTipsPageModule' },
   { path: 'contact-us', loadChildren: './pages/contact-us/contact-us.module#ContactUsPageModule' },
-  { path: 'result-page', loadChildren: './pages/result-page/result-page.module#ResultPagePageModule' },
+  // { path: 'result-page', loadChildren: './pages/result-page/result-page.module#ResultPagePageModule' },
   { path: 'playlist-page', loadChildren: './pages/playlist-page/playlist-page.module#PlaylistPagePageModule' },
   { path: 'core-blog', loadChildren: './pages/core-blog/core-blog.module#CoreBlogPageModule' },
   { path: 'strength-blog', loadChildren: './pages/strength-blog/strength-blog.module#StrengthBlogPageModule' },

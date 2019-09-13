@@ -11,7 +11,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <preference name="YouTubeDataApiKey" value="AIzaSyBb2EaS3vejQ6R8hrZskQ72m5XJN0wv5r8" />
+    <preference name="YouTubeDataApiKey" value="AIzaSyCuCs1-gqDES6irl0fuTe9ME2p3llia3ac" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />

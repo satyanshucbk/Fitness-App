@@ -3,6 +3,7 @@ import { YtService } from '../../services/yt.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Location } from '@angular/common';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 
 @Component({
   selector: 'app-playlist-page',
@@ -19,7 +20,7 @@ export class PlaylistPagePage implements OnInit {
 
   constructor(public ytService: YtService, private location: Location, 
               private authService: AuthService, private activatedRoute: ActivatedRoute,
-              public router: Router) {
+              public router: Router,  private youtube: YoutubeVideoPlayer) {
 
    }
 
@@ -43,7 +44,9 @@ export class PlaylistPagePage implements OnInit {
   }
 
   playVideos(videoId){
-    this.router.navigate(['result-page'], { queryParams: { page: videoId} } );
+    debugger
+    this.youtube.openVideo(videoId);
+    // this.router.navigate(['result-page'], { queryParams: { page: videoId} } );
     console.log(videoId);
   }
    
